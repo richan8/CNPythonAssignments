@@ -116,7 +116,7 @@ def get_route(hostname):
                 #Fill in end
                 try: #try to fetch the hostname
                     #Fill in start
-                    recvHostName = gethostbyaddr(addr[0])[0]
+                        recvHostName = gethostbyaddr(addr[0])[0]
                     #Fill in end
                 except herror:   #if the host does not provide a hostname
                     #Fill in start
@@ -144,11 +144,10 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     tracelist1.extend([str(int(1000*(timeReceived-t)))+'ms',str(addr[0]),str(recvHostName)])
-                    #print(tracelist1)
                     tracelist2.append(tracelist1)
-                    #print(tracelist2)
+                    #for x in tracelist2:
+                    #    print(x)
                     return(tracelist2)
-                    #print('RETURNING: ',tracelist1)
                     #Fill in end
                 else:
                     #Fill in start
@@ -157,10 +156,8 @@ def get_route(hostname):
                     #Fill in end
                 break
             finally:
-                #print(tracelist1)
                 tracelist2.append(tracelist1)
                 mySocket.close()
-
 
 ### DEBUG
 #get_route("www.google.com")
